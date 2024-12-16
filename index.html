@@ -1,32 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-  <title>Secure Bit Space</title> 
-  
+<html lang="en">  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OTP and Meeting ID Verification</title>
-
+  <title>Secure Bit Space</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div id="email-section" class="input-wrapper" style="display: flex">
-    <label for="email">Email:</label>
-    <input type="email" id="email" placeholder="Enter your email" />
-    <button onclick="sendOTP()">Send OTP</button>
-    <p id="email-error" class="error-message">Invalid email. Please try again.</p>
+  <div class="container">
+    <h1>Secure Bit Space</h1>
+    <h2 class="sub-title">OTP and Meeting ID Verification</h2>
+    
+    <div id="email-section" class="input-wrapper" style="display: flex">
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" />
+      <button onclick="sendOTP()">Send OTP</button>
+      <p id="email-error" class="error-message">Invalid email. Please try again.</p>
+    </div>
+
+    <div id="otp-section" class="input-wrapper" style="display: none">
+      <label for="otp">OTP:</label>
+      <input type="text" id="otp" placeholder="Enter the OTP" />
+      <button onclick="verifyOTP()">Verify OTP</button>
+      <p id="otp-error" class="error-message">Invalid OTP. Please try again.</p>
+    </div>
+
+    <p class="info-text">Your information is secure and encrypted.</p>
   </div>
-
-  <div id="otp-section" class="input-wrapper" style="display: none">
-    <label for="otp">OTP:</label>
-    <input type="text" id="otp" placeholder="Enter the OTP" />
-    <button onclick="verifyOTP()">Verify OTP</button>
-    <p id="otp-error" class="error-message">Invalid OTP. Please try again.</p>
-  </div>
-
-  <p class="info-text">Your information is secure and encrypted.</p>
-
+  
   <script src="script.js"></script>
 </body>
 </html>
