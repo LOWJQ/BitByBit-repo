@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet Prototype</title>
+    <link rel="stylesheet" href="style_meeting.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Your Meeting</h1>
+      <p id="meeting-id-display"></p>
+    </header>
+
+    <div class="navbar">
+      <div class="title">Meet Prototype</div>
+      <div class="buttons">
+        <button>📄 Info</button>
+        <button>🔧 Settings</button>
+        <button id="lock-button" onclick="lockMeeting()">
+          🔒 Lock Meeting
+        </button>
+        <button onclick="location.href='ai_face_feature.html'">
+          🤖 AI Face
+        </button>
+        <button onclick="goToPrivateInterview()">🎤 Private Interview</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="video-tile">User 1</div>
+      <div class="video-tile">User 2</div>
+      <div class="video-tile">User 3</div>
+      <div class="video-tile">User 4</div>
+    </div>
+
+    <div class="controls">
+      <button onclick="confirmAction('microphone')">🎤 Mute</button>
+      <button onclick="confirmAction('camera')">📷 Video</button>
+      <button onclick="leave()">📞 Leave</button>
+      <button onclick="toggleChat()">💬 Chat</button>
+      <button id="share-screen-button" onclick="startScreenShare()">
+        🖥️ Share Screen
+      </button>
+    </div>
+
+    <div id="chat-box">
+      <div class="messages" id="message-history"></div>
+      <input
+        type="text"
+        id="chat-input"
+        placeholder="Type a message..."
+        oninput="checkMessage(event)"
+        onkeydown="sendMessageOnEnter(event)"
+      />
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal">
+      <div class="modal-content">
+        <h3 id="modal-text">Are you sure you want to enable the microphone?</h3>
+        <button id="confirm-button" onclick="performAction()">Yes</button>
+        <button class="cancel" onclick="closeModal()">No</button>
+      </div>
+    </div>
+
+    <div id="screen-share-container" class="screen-share-container">
+      <video id="screen-share-video" autoplay></video>
+      <div id="watermark" class="watermark">Watermark</div>
+    </div>
+
+    <script src="script_meeting.js"></script>
+  </body>
+</html>
